@@ -66,6 +66,11 @@ public class VisaController {
         return visaService.searchVisa_(holderPassportNumber, holderDateOfBirth, holderNationality);
     }
 
+    @GetMapping("app-visa/{visaNumber}/{moiRef}/{holderPassportNumber}")
+    public List<VisaModel> searchVisaForApp(@PathVariable String visaNumber, @PathVariable String moiRef, @PathVariable String holderPassportNumber){
+        return visaService.searchVisaForApp(visaNumber, moiRef, holderPassportNumber);
+    }
+
 
     @GetMapping("/qrCode/{path}")
     public ResponseEntity<byte[]> getQrCode(@PathVariable String path) {

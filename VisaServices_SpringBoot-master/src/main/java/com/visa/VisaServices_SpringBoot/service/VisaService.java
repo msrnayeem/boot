@@ -34,6 +34,10 @@ public class VisaService {
         return visaRepo.searchVisa(holderPassportNo, holderDateOfBirth, holderNationality);
     }
 
+    public List<VisaModel> searchVisaForApp(String visaNumber, String moiRef, String holderPassportNumber){
+        return visaRepo.searchVisaForApp(visaNumber, moiRef, holderPassportNumber);
+    }
+
 
    // QR Code Services
 
